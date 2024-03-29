@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade</title>
+    <script type="text/javascript">
+       
+        let resultado;
+        let continuar;
+
+        do{
+        let num1 = parseFloat(prompt("Digite um numero"));
+        while (isNaN(num1) || (num1 == ''))
+            num1 = parseFloat(prompt('O valor informado não é um número, digite um valor válido para num1'));
+
+        let num2 = parseFloat(prompt("Digite outro numero"));
+        while (isNaN(num2) || num2 == '')
+            num2 = parseFloat(prompt('O valor informado não é um número, digite um valor válido para num2: '));
+
+        let op = prompt('Digite qual operação voce deseja fazer (+, -, /, *)')
+        while (op != '+' && op != '-' && op != '*' && op != '/')
+            op = prompt('O valor informado não corresponde a uma operação, digite um valor válido que corresponda (+,-,/,*)');
+        
+        if(op == "+"){
+           resultado = num1 + num2;
+        }else if(op == "-"){
+            resultado = num1 - num2;
+        }else if(op == "/"){
+            resultado = num1 / num2;
+        }else if(op == "*"){
+            resultado = num1 * num2;
+        } 
+
+        alert("O resultado é:" + resultado);
+        continuar = prompt("Deseja realizar outra operação? (s/n)").toLowerCase();
+     }
+      while (continuar === "s");
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

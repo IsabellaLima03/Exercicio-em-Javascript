@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetores</title>
+    <script type="text/javascript">
+
+        let listaTarefas = []; //array vazio pq é usuario que vai preencher
+        do{
+            let tarefa = prompt('Informe uma tarefa: ');
+            let tarefaRepetida = false; //variavel para armazenar tarefas repetidas
+
+            for(let i = 0; i < listaTarefas.length; i++) { //verifica se há tarefas duplicadas
+                if (listaTarefas[i] === tarefa){ //diz que se algum item aleatorio [i] do vetor for = a tarefa add, a let tarefaRepetida vai ser true e vai armazenar o valor repetido.
+                    tarefaRepetida = true;
+                    alert('Tarefa já existente');
+                    break; //sai do cod assim que a tarefa duplicada é encontrada
+                }
+            }
+
+            if(!tarefaRepetida){ // Se a tarefa não estiver repetida, adiciona-a à lista
+                listaTarefas.push(tarefa);
+            }else{
+                alert('Tarefa Inválida'); // Caso contrário, exibe um alerta de tarefa inválida
+            }
+            
+            
+            if(tarefa != '') { // Verifica se a tarefa inserida não está vazia
+               tarefaRepetida = false;
+            }else{
+                alert('Informe uma tarefa valida!');
+            }
+
+        }while (confirm('Deseja incluir nova tarefa?'));
+
+        let auxHtml = '<ul>'; // Cria uma lista HTML com as tarefas adicionadas pelo usuário
+            for (let i = 0; i < listaTarefas.length; i++) { //percorre o array para formar uma lista com as tarefas adicionadas
+                
+                auxHtml += '<li>' + listaTarefas[i] + '</li>';
+            }
+            auxHtml += '</ul>';
+            document.write(auxHtml);  // Escreve a lista HTML na página
+    </script>
+</head>
+<body>
+   
+</body>
+</html>
